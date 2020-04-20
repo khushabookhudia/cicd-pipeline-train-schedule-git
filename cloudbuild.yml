@@ -1,11 +1,12 @@
 steps:
 
-- name: 'ubuntu'
-  args: ['bash', '-c' , 'pwd']
-
-# Simple sanity check: invoke the new gcloud container to confirm that it was
-# built correctly.
 - name: 'gcr.io/cloud-builders/gcloud'
-  args: ['compute' , 'scp' , 'routes/' , 'khushaboo_khudia@instance-3:/home/khushaboo_khudia' , '--recurse' , '--zone=us-central1-a']
+  entrypoint: 'bash'
+  args: 
+  - '-c'
+  -  |
+      for d in *; do
+        gcloud compute scp $d pranay_nanda@instance-2:/home/pranay_nanda/demo --zone=us-central1-a --recurse
+      done
 
 timeout: 1200s
