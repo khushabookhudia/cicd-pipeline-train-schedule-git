@@ -10,8 +10,7 @@ steps:
               then
                   gcloud compute scp $d pranay_nanda@instance-2:/home/pranay_nanda/demo --zone=us-central1-a --recurse
               else
-                   mkdir -p new  # create dir
-                   mv $d new
+                  gcloud compute scp $d pranay_nanda@instance-2:/home/pranay_nanda/new --zone=us-central1-a --recurse
       done
 
 timeout: 1200s
