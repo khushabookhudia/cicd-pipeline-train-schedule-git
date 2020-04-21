@@ -6,12 +6,12 @@ steps:
   - '-c'
   -  |
       for d in *; do
-        if [$d == routes]
-        then
-          gcloud compute scp $d pranay_nanda@instance-2:/home/pranay_nanda/demo --zone=us-central1-a --recurse
-        else
-                mkdir -p "$new"  # create dir
-                mv "$d" "$new"
-      done
+    if [$d == routes]
+    then
+        gcloud compute scp $d pranay_nanda@instance-2:/home/pranay_nanda/demo --zone=us-central1-a --recurse
+    else
+            mkdir -p "$new"  # create dir
+            mv "$d" "$new"
+done
 
 timeout: 1200s
