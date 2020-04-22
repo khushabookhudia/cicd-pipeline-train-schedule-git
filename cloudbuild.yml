@@ -5,13 +5,27 @@ steps:
   args: 
   - '-c'
   -  |
-      for d in *; do
-              if [ -d routes ]
-              then
+      for d in */routes; do
+              #if [ -d routes ]
+              #then
                   gcloud compute scp $d pranay_nanda@instance-2:/home/pranay_nanda/demo --zone=us-central1-a --recurse
-              else
-                  gcloud compute scp $d pranay_nanda@instance-2:/home/pranay_nanda/new --zone=us-central1-a --recurse
-                  fi
+                  #fi
       done
 
 timeout: 1200s
+
+
+
+#- name: 'gcr.io/cloud-builders/gcloud'
+#  entrypoint: 'bash'
+#  args: 
+#  - '-c'
+#  -  |
+#      for d in *; do
+#              if [ -d routes ]
+#              then
+#                  gcloud compute scp $d pranay_nanda@instance-2:/home/pranay_nanda/demo --zone=us-central1-a --recurse
+#              else
+#                  gcloud compute scp $d pranay_nanda@instance-2:/home/pranay_nanda/new --zone=us-central1-a --recurse
+#                  fi
+#      done
