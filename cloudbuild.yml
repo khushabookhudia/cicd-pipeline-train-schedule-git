@@ -5,11 +5,8 @@ steps:
   args: 
   - '-c'
   -  |
-      for d in */routes; do
-              #if [ -d routes ]
-              #then
-                  gcloud compute scp $d pranay_nanda@instance-2:/home/pranay_nanda/demo --zone=us-central1-a --recurse
-                  #fi
+      for d in routes/*; do
+              gcloud compute scp $d pranay_nanda@instance-2:/home/pranay_nanda/demo --zone=us-central1-a --recurse
       done
 
 timeout: 1200s
