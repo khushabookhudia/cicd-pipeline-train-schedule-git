@@ -13,7 +13,7 @@ steps:
   args:
   - '-c'
   -  |
-       gcloud compute ssh instance-3 --zone us-central1-a --command="sudo systemctl status apache2"  
+       gcloud compute ssh khushaboo_khudia@instance-3 --zone us-central1-a --command="sudo systemctl status apache2"  
 
 - name: 'gcr.io/cloud-builders/curl'
   args: ['-I' , 'http://kkhudia.olivetech.io']
