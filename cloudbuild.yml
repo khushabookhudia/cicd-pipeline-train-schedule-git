@@ -6,10 +6,10 @@ steps:
   - '-c'
   -  |
       for d in routes/*; do
-              gcloud compute scp $d khushaboo_khudia@10.128.15.232:/home/khushaboo_khudia/demo --zone=us-central1-a --recurse
+              gcloud compute scp $d khushaboo_khudia@instance-3:/home/khushaboo_khudia/demo --zone=us-central1-a --recurse
       done
 - name: 'gcr.io/cloud-builders/gcloud'
-  args: ['compute' , 'ssh', 'khushaboo_khudia@10.128.15.232' , '--zone=us-central1-a' , '--command="ls"']      
+  args: ['compute' , 'ssh', 'khushaboo_khudia@instance-3' , '--zone=us-central1-a' , '--command="ls"']      
 
 timeout: 1200s
 
