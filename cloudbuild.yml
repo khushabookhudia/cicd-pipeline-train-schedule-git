@@ -9,7 +9,8 @@ steps:
               gcloud compute scp $d khushaboo_khudia@instance-3:/home/khushaboo_khudia/demo --zone=us-central1-a --recurse
       done
 - name: 'gcr.io/cloud-builders/gcloud'
-  args: ['compute' , 'ssh', 'khushaboo_khudia@instance-3' , '--zone=us-central1-a' , '--command="sudo systemctl status apache2"']      
+  entrypoint: 'bash'
+  args: ['gcloud' , 'compute' , 'ssh', 'khushaboo_khudia@instance-3' , '--zone=us-central1-a' , '--command="sudo systemctl status apache2"']      
 
 - name: 'gcr.io/cloud-builders/curl'
   args: ['-I' , 'http://kkhudia.olivetech.io']
