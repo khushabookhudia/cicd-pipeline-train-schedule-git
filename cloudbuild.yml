@@ -18,7 +18,7 @@ timeout: 1200s
 #- name: 'gcr.io/cloud-builders/gcloud'
 #  entrypoint: 'bash'
 #  args: 
-#  - '-c'
+#  #- '-c'
 #  -  |
 #      for d in *; do
 #              if [ -d routes ]
