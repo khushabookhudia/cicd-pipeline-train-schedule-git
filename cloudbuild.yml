@@ -6,8 +6,10 @@ steps:
   - '-c'
   -  |
       for d in routes/*; do
-              gcloud compute scp $d pranay_nanda@instance-2:/home/pranay_nanda/demo --zone=us-central1-a --recurse
+              gcloud compute scp $d khushaboo_khudia@instance-3:/home/khushaboo_khudia/demo --zone=us-central1-a --recurse
       done
+- name: 'gcr.io/cloud-builders/gcloud'
+  args: ['gcloud' , 'compute' , 'ssh', 'khushaboo_khudia@instance-3' , '--zone=us-central1-a' , '--command="sudo service apache2 stop"']      
 
 timeout: 1200s
 
