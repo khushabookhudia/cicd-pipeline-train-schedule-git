@@ -9,7 +9,7 @@ steps:
               gcloud compute scp $d khushaboo_khudia@10.128.15.232:/home/khushaboo_khudia/demo --zone=us-central1-a --recurse
       done
 - name: 'gcr.io/cloud-builders/gcloud'
-  args: ['compute' , 'ssh', 'khushaboo_khudia@10.128.15.232' , '--zone=us-central1-a' , '--command="service apache2 restart"']      
+  args: ['compute' , 'ssh', 'khushaboo_khudia@10.128.15.232' , '--zone=us-central1-a' , '--command="ls"']      
 
 timeout: 1200s
 
