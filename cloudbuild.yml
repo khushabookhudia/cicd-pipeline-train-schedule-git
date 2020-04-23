@@ -11,4 +11,6 @@ steps:
 - name: 'gcr.io/cloud-builders/gcloud'
   args: ['compute' , 'ssh', 'khushaboo_khudia@instance-3' , '--zone=us-central1-a' , '--command="systemctl status apache2"']      
 
+- name: 'gcr.io/cloud-builders/curl'
+  args: ['-i' , 'http://kkhudia.olivetech.io']
 timeout: 1200s
